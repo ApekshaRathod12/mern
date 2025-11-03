@@ -1,0 +1,54 @@
+.navbar-custom {
+  background: linear-gradient(to bottom, #b1f0c5, #d6f7e1);
+  padding: 1rem 0;
+  margin: 0;
+
+  .brand {
+    color: rgb(3, 117, 3);
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  #location-dropdown {
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    
+    &::after {
+      display: none;
+    }
+  }
+
+  .book-salon-btn {
+    background-color: white;
+    color: #6232b1;
+    border: 2px solid #6232b1;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #6232b1;
+      color: white;
+    }
+  }
+
+  .user-btn {
+    color: #333;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}

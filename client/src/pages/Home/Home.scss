@@ -1,0 +1,157 @@
+.home {
+  .hero-section {
+    background: linear-gradient(to bottom, #d6f7e1, #ffffff);
+    padding-top: 0;
+    padding-bottom: 3rem;
+    margin-top: -1rem;  // This removes the gap between navbar and hero section
+  }
+  
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .search-form {
+    width: 100%;
+    padding-top: 30px;
+    .search-input-container {
+      margin-top: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      
+      .search-input {
+        flex: 1;
+        border: none;
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      
+      .search-button {
+        padding: 0.5rem 1rem;
+        color: #666;
+        border: none;
+        
+        &:hover {
+          color: #333;
+        }
+        
+        i {
+          font-size: 1.2rem;
+        }
+      }
+
+      .search-results {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        max-height: 400px;
+        overflow-y: auto;
+
+        .search-result-item {
+          display: flex;
+          padding: 1rem;
+          border-bottom: 1px solid #f0f0f0;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &:hover {
+            background-color: #f8f9fa;
+          }
+
+          .salon-image {
+            width: 60px;
+            height: 60px;
+            margin-right: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .salon-info {
+            flex: 1;
+
+            h3 {
+              font-size: 1rem;
+              margin: 0 0 0.25rem;
+              color: #333;
+            }
+
+            .location {
+              font-size: 0.9rem;
+              color: #666;
+              margin: 0 0 0.25rem;
+              
+              i {
+                color: #999;
+                margin-right: 0.25rem;
+              }
+            }
+
+            .rating-offer {
+              display: flex;
+              gap: 1rem;
+              align-items: center;
+
+              .rating {
+                color: #ffa41c;
+                font-weight: 500;
+                font-size: 0.9rem;
+              }
+
+              .offer {
+                color: #00b67a;
+                font-size: 0.85rem;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        .no-results {
+          padding: 1rem;
+          text-align: center;
+          color: #666;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .spa-card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: 0.3s ease;
+    margin-bottom: 2rem;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
