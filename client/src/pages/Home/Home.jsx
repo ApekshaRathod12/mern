@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
-import "./Home.scss";
-
+import "../../styles/Home.scss";
+import TableComp from "../../components/TableComp";
 const mockResults = [
   {
     id: 1,
@@ -99,6 +99,7 @@ const Home = () => {
     <div className="home">
       <header className="hero-section">
         <div className="search-container">
+          <TableComp />
           <Form className="search-form">
             <div className="search-input-container">
               <Form.Control
