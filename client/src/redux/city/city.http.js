@@ -8,3 +8,12 @@ export const fetchCitiesApi = async () => {
         return error;
     }
 }
+
+export const addCityApi = async (payload) => {
+    try {
+        const response = await axiosInstance.post('/add-city', payload);
+        return response;
+    } catch (error) {
+        return error;
+    }
+}

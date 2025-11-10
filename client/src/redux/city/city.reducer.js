@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit"
-import { fetchCities } from "./city.action"
+import { addCity, fetchCities } from "./city.action"
 
 const initialState = {
     cities : [],
@@ -19,5 +19,15 @@ export const cityReducer = createReducer(initialState , (builder) => {
     .addCase(fetchCities.rejected , (state) => {
         state.status = 'failed';
         // You can handle errors here if needed
+    })
+    .addCase(addCity.pending , (state) => {
+        state.status = 'loading';
+    })
+    .addCase(addCity.fulfilled , (state , action) => {
+        state.status = 'succeeded';
+        state.cities.push(action.payload.data);
+    })
+    .addCase(addCity.rejected , (state) => {
+        state.status = 'failed';
     })
 })
