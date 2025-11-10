@@ -1,17 +1,34 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const e = require('cors');
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const cityRouter = require("./routes/cityRoute");
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // your React app
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
-const connectDB = require('./config/db');
-connectDB();
+// ✅ connect to MongoDB
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
+
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
+// Mount city routes
+app.use('/api/cities', cityRouter);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });

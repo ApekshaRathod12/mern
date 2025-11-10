@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import "../styles/NavComp.scss";
+import { Link } from "react-router-dom";
 
 const NavComp = () => {
   return (
@@ -12,18 +13,23 @@ const NavComp = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
-            {/* <NavDropdown
+            <NavDropdown
+              as={Link}
+              to="/"
               title={
                 <span>
-                  Ahmedabad <i className="fas fa-chevron-down ms-1"></i>
+                  Masters <i className="fas fa-chevron-down ms-1"></i>
                 </span>
               }
               id="location-dropdown"
             >
-              <NavDropdown.Item href="#mumbai">Mumbai</NavDropdown.Item>
-              <NavDropdown.Item href="#delhi">Delhi</NavDropdown.Item>
-              <NavDropdown.Item href="#bangalore">Bangalore</NavDropdown.Item>
-            </NavDropdown> */}
+              <NavDropdown.Item as={Link} to="/city">
+                City
+              </NavDropdown.Item>
+
+              {/* <NavDropdown.Item href="#delhi">Delhi</NavDropdown.Item>
+              <NavDropdown.Item href="#bangalore">Bangalore</NavDropdown.Item> */}
+            </NavDropdown>
             {/* <Button variant="outline-primary" className="book-salon-btn">
               BOOK salon
             </Button> */}

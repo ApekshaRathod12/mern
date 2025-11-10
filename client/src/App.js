@@ -1,19 +1,18 @@
 import './App.css';
-import { Route, BrowserRouter , Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import NavComp from './components/NavComp';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
+import City from './pages/City';
 
 function App() {
   return (
     <>
     <NavComp />
-    <BrowserRouter>
       <Routes>
-
         <Route path='/' element={<Home/>} />
+        <Route path='/city' element={<City/>} />
       </Routes>
-    </BrowserRouter>
     </>
   );
 }
