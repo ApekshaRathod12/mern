@@ -1,9 +1,12 @@
 import { fetchCities } from "../redux/city/city.action";
 import TableComp from "../components/TableComp";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ModalComp from "../components/ModalComp";
 import CityForm from "../components/forms/CityForm";
+import { CityColumns } from "../config/columns/CityColumns";
+import "../styles/City.scss";
+import { Button } from "react-bootstrap";
 
 const City = () => {
   const dispatch = useDispatch();
@@ -11,11 +14,6 @@ const City = () => {
   const [open, setOpen] = useState(false);
 
   console.log(cities);
-
-  const cityColumns = [
-    { id: "index", label: "ID" },
-    { id: "cityName", label: "City Name" },
-  ];
 
   useEffect(() => {
     dispatch(fetchCities());
@@ -32,18 +30,23 @@ const City = () => {
   }));
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center mt-4">
-      <div className="d-flex gap-2">
+    <div className="city-container">
+      <div className="city">
         <h3>City</h3>
-        <button
-          style={{ width: "70px", borderRadius: "5px" }}
+        <Button
+          style={{
+            width: "100px",
+            borderRadius: "5px",
+            backgroundColor: "green",
+            borderColor: "green",
+          }}
           onClick={() => setOpen(true)}
         >
           + Add
-        </button>
+        </Button>
       </div>
       <TableComp
-        columns={cityColumns}
+        columns={CityColumns}
         rows={indexedCities}
         style={{ width: "700px" }}
       />

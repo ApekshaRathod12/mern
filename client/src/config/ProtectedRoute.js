@@ -1,9 +1,8 @@
 // src/utils/ProtectedRoute.js
-import { useAuth } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
-  const { user } = useAuth();
+  const user = localStorage.getItem('role');
   console.log(user);
   
 

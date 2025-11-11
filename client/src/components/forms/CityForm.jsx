@@ -12,7 +12,7 @@ const CityForm = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <Formik initialValues={{ cityName: "" }} onSubmit={handleSubmit}>
         {() => (
           <Form>
@@ -24,6 +24,9 @@ const CityForm = () => {
               type="submit"
               style={{
                 marginTop: "20px",
+                color: "black",
+                borderColor: "#0ef566ff",
+                backgroundColor: "#0ef566ff",
               }}
             >
               Submit

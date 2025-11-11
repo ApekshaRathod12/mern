@@ -1,0 +1,16 @@
+.city-container{
+    border: 1px solid black;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 50px;
+    padding-top: 20px;
+    .city{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
