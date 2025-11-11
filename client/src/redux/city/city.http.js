@@ -11,7 +11,7 @@ export const fetchCitiesApi = async () => {
 
 export const addCityApi = async (payload) => {
     try {
-        const response = await axiosInstance.post('/add-city', payload);
+        const response = await axiosInstance.post('/cities/add-city', payload);
         return response;
     } catch (error) {
         return error;

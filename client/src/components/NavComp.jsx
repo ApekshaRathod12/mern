@@ -2,8 +2,12 @@ import React from "react";
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import "../styles/NavComp.scss";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const NavComp = () => {
+  const { user } = useAuth();
+  console.log(user);
+
   return (
     <Navbar expand="lg" className="navbar-custom">
       <Container>
@@ -23,9 +27,11 @@ const NavComp = () => {
               }
               id="location-dropdown"
             >
-              <NavDropdown.Item as={Link} to="/city">
-                City
-              </NavDropdown.Item>
+              {user === "admin" && (
+                <NavDropdown.Item as={Link} to="/city">
+                  City
+                </NavDropdown.Item>
+              )}
 
               {/* <NavDropdown.Item href="#delhi">Delhi</NavDropdown.Item>
               <NavDropdown.Item href="#bangalore">Bangalore</NavDropdown.Item> */}

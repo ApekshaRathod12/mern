@@ -17,17 +17,25 @@ cityRouter.get('/', async (req, res) => {
 
 // POST / -> add a new city
 cityRouter.post('/add-city', async (req, res) => {
-    console.log('req',req);
-    
 	try {
+		console.log(req.body);
+		
 		let { id, cityName } = req.body;
-		if (!id) {
-			// Find the max id in the collection and increment
-			const lastCity = await City.findOne().sort({ id: -1 });
-			id = lastCity ? lastCity.id + 1 : 1;
+
+		if (!cityName) {
+			return res.status(400).json({ message: 'cityName is required' });
 		}
+
+		if (id === undefined || id === null || isNaN(Number(id))) {
+			const lastCity = await City.findOne().sort({ id: -1 });
+			id = lastCity && typeof lastCity.id === 'number' ? lastCity.id + 1 : 1;
+		} else {
+			id = Number(id);
+		}
+
 		const newCity = new City({ id, cityName });
 		await newCity.save();
+
 		res.status(201).json({ message: 'City added successfully', city: newCity });
 	} catch (error) {
 		console.error('Error adding city:', error);

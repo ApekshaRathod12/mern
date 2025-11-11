@@ -4,14 +4,17 @@ import NavComp from './components/NavComp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
 import City from './pages/City';
+import Login from './pages/Login';
+import ProtectedRoute from './config/ProtectedRoute';
 
 function App() {
   return (
     <>
     <NavComp />
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/city' element={<City/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/' element={<ProtectedRoute allowedRoles={['admin','staff']}><Home/></ProtectedRoute>} />
+        <Route path='/city' element={<ProtectedRoute allowedRoles={['admin']}><City/></ProtectedRoute>} />
       </Routes>
     </>
   );

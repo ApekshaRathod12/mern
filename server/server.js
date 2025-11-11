@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const cityRouter = require("./routes/cityRoute");
+const loginRouter = require("./routes/loginRoute");
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 
 // Mount city routes
 app.use('/api/cities', cityRouter);
+app.use('/api',loginRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
