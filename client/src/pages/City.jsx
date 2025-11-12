@@ -30,8 +30,8 @@ const City = () => {
   }));
 
   return (
-    <div className="city-container">
-      <div className="city">
+    <div className="master-container">
+      <div className="master-div">
         <h3>City</h3>
         <Button
           style={{

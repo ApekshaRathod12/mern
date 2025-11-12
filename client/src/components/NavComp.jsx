@@ -28,9 +28,14 @@ const NavComp = () => {
               id="location-dropdown"
             >
               {user === "admin" && (
-                <NavDropdown.Item as={Link} to="/city">
-                  City
-                </NavDropdown.Item>
+                <>
+                  <NavDropdown.Item as={Link} to="/city">
+                    City
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/company">
+                    Company
+                  </NavDropdown.Item>
+                </>
               )}
 
               {/* <NavDropdown.Item href="#delhi">Delhi</NavDropdown.Item>

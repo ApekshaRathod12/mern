@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import City from './pages/City';
 import Login from './pages/Login';
 import ProtectedRoute from './config/ProtectedRoute';
+import Company from './pages/Company';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/' element={<ProtectedRoute allowedRoles={['admin','staff']}><Home/></ProtectedRoute>} />
         <Route path='/city' element={<ProtectedRoute allowedRoles={['admin']}><City/></ProtectedRoute>} />
+        <Route path='/company' element={<ProtectedRoute allowedRoles={['admin']}><Company /></ProtectedRoute>} />
       </Routes>
     </>
   );

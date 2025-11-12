@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const cityRouter = require("./routes/cityRoute");
 const loginRouter = require("./routes/loginRoute");
+const companyRouter = require("./routes/companyRoute");
 
 dotenv.config();
 
@@ -27,8 +28,10 @@ app.get("/", (req, res) => {
 });
 
 // Mount city routes
-app.use('/api/cities', cityRouter);
 app.use('/api',loginRouter);
+app.use('/api/cities', cityRouter);
+app.use('/api/companies',companyRouter);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
