@@ -48,7 +48,7 @@ const Company = () => {
       />
       {open && (
         <ModalComp show={open} setShow={setOpen} title="Add City">
-          <CompanyForm />
+          <CompanyForm setOpen={setOpen} />
         </ModalComp>
       )}
     </div>

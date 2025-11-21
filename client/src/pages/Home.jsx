@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Container, Row, Form, Button } from "react-bootstrap";
 import "../styles/Home.scss";
 import TableComp from "../components/TableComp";
+import Leads from "./Leads";
 
 const Home = () => {
   const fetchCities = async () => {
@@ -26,29 +26,7 @@ const Home = () => {
   return (
     <div className="home">
       <header className="hero-section">
-        <div className="search-container">
-          {/* <TableComp
-            columns={[
-              { id: "name", label: "Name" },
-              { id: "location", label: "Location", align: "left" },
-              {
-                id: "rating",
-                label: "Rating",
-                align: "center",
-                format: (value) => `★ ${value}`,
-                headerStyle: { width: "100px" },
-              },
-              {
-                id: "offer",
-                label: "Offer",
-                align: "right",
-                format: (value) => value || "-",
-              },
-            ]}
-            // rows={mockResults}
-            maxHeight="400px"
-            onRowClick={(row) => console.log("Clicked row:", row)}
-          /> */}
+        {/* <div className="search-container">
           <Form className="search-form">
             <div className="search-input-container">
               <Form.Control
@@ -64,12 +42,11 @@ const Home = () => {
               </Button>
             </div>
           </Form>
+        </div> */}
+        <div>
+          <Leads />
         </div>
       </header>
-
-      <Container className="mt-5">
-        <Row></Row>
-      </Container>
     </div>
   );
 };

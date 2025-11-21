@@ -5,6 +5,7 @@ const cors = require("cors");
 const cityRouter = require("./routes/cityRoute");
 const loginRouter = require("./routes/loginRoute");
 const companyRouter = require("./routes/companyRoute");
+const leadsRouter = require("./routes/leadsRoute");
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 app.use('/api',loginRouter);
 app.use('/api/cities', cityRouter);
 app.use('/api/companies',companyRouter);
+app.use('/api/leads',leadsRouter);
 
 
 const PORT = process.env.PORT || 5000;

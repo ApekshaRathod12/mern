@@ -4,6 +4,7 @@ import { addCompany, getCompanies } from "./company.action";
 const initialState = {
   status: "idle",
   companies: [],
+  companiesList: []
 };
 
 export const companyReducer = createReducer(initialState, (builder) => {
@@ -23,7 +24,7 @@ export const companyReducer = createReducer(initialState, (builder) => {
     })
     .addCase(addCompany.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.companies.push(action.payload.data);
+      state.companies.push(action.payload);
     })
     .addCase(addCompany.rejected, (state) => {
       state.status = "failed";

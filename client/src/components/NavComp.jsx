@@ -35,6 +35,9 @@ const NavComp = () => {
                   <NavDropdown.Item as={Link} to="/company">
                     Company
                   </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/subcompany">
+                    Sub Company
+                  </NavDropdown.Item>
                 </>
               )}
 

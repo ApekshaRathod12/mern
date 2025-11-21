@@ -3,12 +3,13 @@ import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addCompany } from "../../redux/company/company.action";
 
-const CompanyForm = () => {
+const CompanyForm = ({ setOpen }) => {
   const dispatch = useDispatch();
   const handleSubmit = (values) => {
     console.log(values);
     const payload = { companyName: values.companyName };
     dispatch(addCompany(payload));
+    setOpen(false);
   };
 
   return (

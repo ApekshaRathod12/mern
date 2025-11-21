@@ -7,6 +7,7 @@ import City from './pages/City';
 import Login from './pages/Login';
 import ProtectedRoute from './config/ProtectedRoute';
 import Company from './pages/Company';
+import SubCompany from './pages/SubCompany';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<ProtectedRoute allowedRoles={['admin','staff']}><Home/></ProtectedRoute>} />
         <Route path='/city' element={<ProtectedRoute allowedRoles={['admin']}><City/></ProtectedRoute>} />
         <Route path='/company' element={<ProtectedRoute allowedRoles={['admin']}><Company /></ProtectedRoute>} />
+        <Route path='/subcompany' element={<ProtectedRoute allowedRoles={['admin']}><SubCompany/></ProtectedRoute>} />
       </Routes>
     </>
   );

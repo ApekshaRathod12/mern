@@ -13,7 +13,9 @@ export const getCompaniesApi = async () => {
 export const addCompanyApi = async (payload) => {
     try {
         const response = await axiosInstance.post('/companies/add-company',payload);
-        return response;
+        console.log(response);
+        
+        return response.data;
     } catch (error) {
         console.error(error);
         return error;
